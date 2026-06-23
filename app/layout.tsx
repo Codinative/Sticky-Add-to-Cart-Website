@@ -6,6 +6,7 @@ const inter = Inter({ variable: "--font-sans", subsets: ["latin"], display: "swa
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sticky-add-to-cart.codinative.com"),
+  verification: { google: "U16UQFzfgqf3gYWaF4kkw5BvAqt2XfD5qkWFISRmXoQ" },
   title: {
     default: "Sticky Add to Cart - a persistent Add to Cart bar for BigCommerce",
     template: "%s - Sticky Add to Cart",
