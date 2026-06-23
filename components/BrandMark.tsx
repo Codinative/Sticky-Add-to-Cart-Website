@@ -1,4 +1,4 @@
-/** Brand glyph — a shopping cart on a pinned bar, in the violet brand gradient. */
+/** Brand glyph - a shopping cart on a pinned bar, in the violet brand gradient. */
 export default function BrandMark({ size = 34, radius = 10 }: { size?: number; radius?: number }) {
   return (
     <span className="mark" style={{ width: size, height: size, borderRadius: radius }}>

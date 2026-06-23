@@ -25,10 +25,10 @@ const REQUIREMENTS = [
 
 const STEPS = [
   { t: "Install the app", d: "Add Sticky Add to Cart from the BigCommerce App Marketplace, or from Apps → My Apps. Your free trial starts on install." },
-  { t: "Grant the requested permissions", d: "BigCommerce shows the permissions the app needs and asks you to confirm. Approve them to finish — you're returned to the app dashboard." },
+  { t: "Grant the requested permissions", d: "BigCommerce shows the permissions the app needs and asks you to confirm. Approve them to finish - you're returned to the app dashboard." },
   { t: "Configure your bar", d: "Use the Styling, Layout and Behavior tabs to design the bar. Every change is reflected instantly in the live preview on the right." },
   { t: "Preview on desktop & mobile", d: "Toggle the preview between desktop and mobile, or open a full-page preview in a new tab, to check the bar at real resolution before publishing." },
-  { t: "Save & publish", d: "Click Save Changes. The app installs the bar across all your product pages automatically — no theme edits, no developer required." },
+  { t: "Save & publish", d: "Click Save Changes. The app installs the bar across all your product pages automatically - no theme edits, no developer required." },
   { t: "Verify on the storefront", d: "Open a product page on your live store and scroll down. The sticky bar should appear according to your chosen trigger." },
 ];
 
@@ -58,7 +58,7 @@ export default function InstallationGuide() {
           <article className="prose">
             <div className="scope-banner">
               <Icon name="info" size={18} />
-              <span>Sticky Add to Cart adds a <b>persistent Add to Cart bar</b> to every product page, with full control over its <b>look, layout and behaviour</b> — no theme files to edit.</span>
+              <span>Sticky Add to Cart adds a <b>persistent Add to Cart bar</b> to every product page, with full control over its <b>look, layout and behaviour</b> - no theme files to edit.</span>
             </div>
 
             <section id="requirements">
@@ -76,11 +76,11 @@ export default function InstallationGuide() {
 
             <section id="permissions">
               <h2>Permissions</h2>
-              <p>On install the app requests only the scopes it needs to run the sticky bar — nothing about your orders or payments:</p>
+              <p>On install the app requests only the scopes it needs to run the sticky bar - nothing about your orders or payments:</p>
               <ul>
-                <li><strong>Content / Checkout scripts — modify</strong> — to install the storefront script that renders the bar on your product pages.</li>
-                <li><strong>Products — read</strong> — to display the correct title, price, image and variant options in the bar.</li>
-                <li><strong>Store information — read</strong> — to load your store&apos;s currency and basic settings.</li>
+                <li><strong>Content / Checkout scripts - modify</strong> - to install the storefront script that renders the bar on your product pages.</li>
+                <li><strong>Products - read</strong> - to display the correct title, price, image and variant options in the bar.</li>
+                <li><strong>Store information - read</strong> - to load your store&apos;s currency and basic settings.</li>
               </ul>
               <div className="note">The app never reads or writes orders or payment data.</div>
             </section>
@@ -121,7 +121,7 @@ export default function InstallationGuide() {
               <h3>Variant options look wrong</h3>
               <p>In Styling → Variant Selector, make sure each option name matches your BigCommerce product option exactly (matching is case-insensitive). Unconfigured options fall back to a dropdown.</p>
               <div className="note" style={{ marginTop: 16 }}>
-                Still stuck? Email <a href={LINKS.support}>{LINKS.email}</a> — we reply within one business day.
+                Still stuck? Email <a href={LINKS.support}>{LINKS.email}</a> - we reply within one business day.
               </div>
             </section>
           </article>

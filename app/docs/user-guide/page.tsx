@@ -6,7 +6,7 @@ import { LINKS } from "@/lib/site";
 
 export const metadata = {
   title: "User guide",
-  description: "How to style, arrange and control your sticky Add to Cart bar — the Styling, Layout and Behavior tabs, the live preview, and saving your bar live.",
+  description: "How to style, arrange and control your sticky Add to Cart bar - the Styling, Layout and Behavior tabs, the live preview, and saving your bar live.",
 };
 
 const TOC = [
@@ -46,9 +46,9 @@ export default function UserGuide() {
               <h2>The dashboard</h2>
               <p>The dashboard has two areas: a <strong>configuration panel</strong> on the left, organised into three tabs, and a <strong>live preview</strong> on the right that updates as you work. A floating save bar appears at the bottom whenever you have unsaved changes.</p>
               <ul>
-                <li><strong>Styling</strong> — the visual appearance of the bar and its elements.</li>
-                <li><strong>Layout</strong> — which elements show, their order, and where the bar sits.</li>
-                <li><strong>Behavior</strong> — when and how the bar appears, animates and reacts.</li>
+                <li><strong>Styling</strong> - the visual appearance of the bar and its elements.</li>
+                <li><strong>Layout</strong> - which elements show, their order, and where the bar sits.</li>
+                <li><strong>Behavior</strong> - when and how the bar appears, animates and reacts.</li>
               </ul>
             </section>
 
@@ -56,10 +56,10 @@ export default function UserGuide() {
               <h2>Styling tab</h2>
               <p>Control every visual detail of the bar:</p>
               <ul>
-                <li><strong>Bar appearance</strong> — solid or two-colour gradient background, border radius, padding, shadow, border and opacity.</li>
-                <li><strong>Typography &amp; colours</strong> — title and price colours and weights, compare-at price (strikethrough or sale badge), font family (including Store Default), size, transform and letter spacing.</li>
-                <li><strong>Button</strong> — filled, outline, pill or ghost styles, custom label text, an optional cart icon, colours, hover state, radius, padding, weight and shadow.</li>
-                <li><strong>Product image, variant selector &amp; quantity picker</strong> — size and styling for the thumbnail, the variant controls (dropdown, swatch, radio or rectangle list) and the quantity input (stepper, dropdown or number).</li>
+                <li><strong>Bar appearance</strong> - solid or two-colour gradient background, border radius, padding, shadow, border and opacity.</li>
+                <li><strong>Typography &amp; colours</strong> - title and price colours and weights, compare-at price (strikethrough or sale badge), font family (including Store Default), size, transform and letter spacing.</li>
+                <li><strong>Button</strong> - filled, outline, pill or ghost styles, custom label text, an optional cart icon, colours, hover state, radius, padding, weight and shadow.</li>
+                <li><strong>Product image, variant selector &amp; quantity picker</strong> - size and styling for the thumbnail, the variant controls (dropdown, swatch, radio or rectangle list) and the quantity input (stepper, dropdown or number).</li>
               </ul>
             </section>
 
@@ -67,10 +67,10 @@ export default function UserGuide() {
               <h2>Layout tab</h2>
               <p>Decide what the bar contains and where it lives:</p>
               <ul>
-                <li><strong>Element arrangement</strong> — drag to reorder the product image, title, price, variant selector, quantity picker and Add to Cart button, and hide any of them.</li>
-                <li><strong>Position</strong> — anchor the bar to the bottom (default), top, left or right of the viewport.</li>
-                <li><strong>Width &amp; alignment</strong> — full-width or contained with a max width, content max width, horizontal distribution and vertical alignment.</li>
-                <li><strong>Spacing</strong> — gaps between elements, the gap between the left and right groups, and the bar&apos;s offset from the screen edge.</li>
+                <li><strong>Element arrangement</strong> - drag to reorder the product image, title, price, variant selector, quantity picker and Add to Cart button, and hide any of them.</li>
+                <li><strong>Position</strong> - anchor the bar to the bottom (default), top, left or right of the viewport.</li>
+                <li><strong>Width &amp; alignment</strong> - full-width or contained with a max width, content max width, horizontal distribution and vertical alignment.</li>
+                <li><strong>Spacing</strong> - gaps between elements, the gap between the left and right groups, and the bar&apos;s offset from the screen edge.</li>
               </ul>
             </section>
 
@@ -78,11 +78,11 @@ export default function UserGuide() {
               <h2>Behavior tab</h2>
               <p>Control when and how the bar behaves:</p>
               <ul>
-                <li><strong>Display</strong> — the master enable toggle, trigger mode (on scroll, always, or after a delay), scroll threshold, and an optional close button with your chosen close behaviour.</li>
-                <li><strong>Animation</strong> — entry (slide, fade, bounce or instant), exit (slide, fade or instant) and the animation duration.</li>
-                <li><strong>Cart behaviour</strong> — show a success notification with custom text, and optionally auto-hide the bar after an item is added.</li>
-                <li><strong>Mobile</strong> — show or hide on mobile, a compact mobile layout, and a configurable mobile breakpoint.</li>
-                <li><strong>Advanced</strong> — z-index control (to sit above chat widgets or cookie banners) and a custom CSS class for theme-level overrides.</li>
+                <li><strong>Display</strong> - the master enable toggle, trigger mode (on scroll, always, or after a delay), scroll threshold, and an optional close button with your chosen close behaviour.</li>
+                <li><strong>Animation</strong> - entry (slide, fade, bounce or instant), exit (slide, fade or instant) and the animation duration.</li>
+                <li><strong>Cart behaviour</strong> - show a success notification with custom text, and optionally auto-hide the bar after an item is added.</li>
+                <li><strong>Mobile</strong> - show or hide on mobile, a compact mobile layout, and a configurable mobile breakpoint.</li>
+                <li><strong>Advanced</strong> - z-index control (to sit above chat widgets or cookie banners) and a custom CSS class for theme-level overrides.</li>
               </ul>
             </section>
 
@@ -94,7 +94,7 @@ export default function UserGuide() {
 
             <section id="saving">
               <h2>Saving &amp; going live</h2>
-              <p>When you make changes, the floating save bar appears. Click <strong>Save Changes</strong> to publish — the app updates the storefront script for you, so your latest bar goes live on all product pages without any theme edits. Click <strong>Discard</strong> to revert to your last saved state.</p>
+              <p>When you make changes, the floating save bar appears. Click <strong>Save Changes</strong> to publish - the app updates the storefront script for you, so your latest bar goes live on all product pages without any theme edits. Click <strong>Discard</strong> to revert to your last saved state.</p>
               <div className="note" style={{ marginTop: 16 }}>
                 New here? Start with the <Link href="/docs/installation">Installation guide</Link>. For anything else, email <a href={LINKS.support}>{LINKS.email}</a>.
               </div>

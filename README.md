@@ -1,10 +1,10 @@
-# Sticky Add to Cart — marketing website
+# Sticky Add to Cart - marketing website
 
 The marketing + documentation site for **Sticky Add to Cart**, a BigCommerce app by
 [Codinative](https://codinative.com) that adds a persistent, fully customizable Add to Cart bar
-to every product page — styled visually, with smart triggers, variants and quantity built in.
+to every product page - styled visually, with smart triggers, variants and quantity built in.
 
-Built with **Next.js 15** (App Router) + **React 19** + TypeScript. No database, no API —
+Built with **Next.js 15** (App Router) + **React 19** + TypeScript. No database, no API -
 a static, fast marketing SPA intended for `sticky-add-to-cart.codinative.com`.
 
 ## Live site & links

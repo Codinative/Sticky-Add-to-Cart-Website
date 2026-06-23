@@ -39,7 +39,7 @@ const COLS = [
   },
 ];
 
-/** The full Codinative app suite — shown as a cross-app strip in the footer.
+/** The full Codinative app suite - shown as a cross-app strip in the footer.
  *  Icons are inline so they render identically across every site. */
 const APPS = [
   {
@@ -77,7 +77,7 @@ const APPS = [
   },
 ];
 
-/** Which app this site represents — its card is highlighted in the strip. */
+/** Which app this site represents - its card is highlighted in the strip. */
 const ACTIVE = "sticky";
 
 export default function Footer() {
@@ -90,7 +90,7 @@ export default function Footer() {
               <BrandMark size={34} radius={10} />
               <span className="brand-name"><b>{APP_NAME}</b><span>by {VENDOR}</span></span>
             </Link>
-            <p>A persistent, fully customizable Add to Cart bar for BigCommerce — keep the buy action in reach as shoppers scroll. Style it visually, pick smart triggers, and go live in minutes. No code required.</p>
+            <p>A persistent, fully customizable Add to Cart bar for BigCommerce - keep the buy action in reach as shoppers scroll. Style it visually, pick smart triggers, and go live in minutes. No code required.</p>
           </div>
           {COLS.map((c) => (
             <div key={c.title} className="foot-col">

@@ -19,7 +19,7 @@ const RESOURCES = [
   { href: "/docs/terms-of-service", external: false, ic: "doc", t: "Terms of service",
     d: "The terms for using the app: service, responsibilities, billing and liability." },
   { href: "/contact", external: false, ic: "mail", t: "Contact & support",
-    d: "Questions or issues? Reach the Codinative team — we reply within one business day." },
+    d: "Questions or issues? Reach the Codinative team - we reply within one business day." },
   { href: LINKS.marketplace, external: true, ic: "store", t: "Get the app",
     d: "Install Sticky Add to Cart on your BigCommerce store from the App Marketplace." },
 ];
@@ -33,7 +33,7 @@ export default function DocsHome() {
           <div className="doc-crumb"><Link href="/">Home</Link> <Icon name="chevR" size={13} /> Docs</div>
           <span className="eyebrow"><span className="dot" /> Documentation</span>
           <h1 style={{ marginTop: 12 }}>Everything in one place.</h1>
-          <p className="lead">Guides, policies and support for Sticky Add to Cart — the BigCommerce app that pins a fully customizable Add to Cart bar to every product page.</p>
+          <p className="lead">Guides, policies and support for Sticky Add to Cart - the BigCommerce app that pins a fully customizable Add to Cart bar to every product page.</p>
         </div>
       </section>
 
