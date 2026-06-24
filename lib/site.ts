@@ -2,6 +2,8 @@
 export const APP_NAME = "Sticky Add to Cart";
 export const APP_TAGLINE = "A persistent, fully customizable Add to Cart bar for BigCommerce product pages.";
 export const VENDOR = "Codinative";
+/** Canonical public origin (no trailing slash) - used for metadata + structured data. */
+export const SITE_URL = "https://sticky-add-to-cart.codinative.com";
 
 /** Links - update these once the listing + app URLs are final. */
 export const LINKS = {

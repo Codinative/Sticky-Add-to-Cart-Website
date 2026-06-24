@@ -3,7 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
 import StickyPreview from "@/components/StickyPreview";
-import { LINKS } from "@/lib/site";
+import { APP_NAME, VENDOR, SITE_URL, LINKS } from "@/lib/site";
 
 const FEATURES = [
   { ic: "pin", t: "Always within reach", d: "A persistent Add to Cart bar follows shoppers down the page, so the buy action is never more than a glance away - no scrolling back to the top." },
@@ -37,8 +37,21 @@ const FAQS = [
 ];
 
 export default function Home() {
+  // Tells Google the preferred site name (otherwise it falls back to the bare domain).
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: APP_NAME,
+    url: `${SITE_URL}/`,
+    publisher: { "@type": "Organization", name: VENDOR, url: LINKS.vendor },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Nav />
 
       {/* ---------- Hero ---------- */}
