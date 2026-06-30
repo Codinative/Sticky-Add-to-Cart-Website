@@ -5,8 +5,10 @@ import Icon from "@/components/Icon";
 import { LINKS } from "@/lib/site";
 
 export const metadata = {
-  title: "Documentation",
-  description: "All guides, policies and support for Sticky Add to Cart in one place.",
+  title: { absolute: "Sticky Add to Cart Docs - Setup Guide | BigCommerce" },
+  description:
+    "Learn how to install and configure the Sticky Add to Cart app for BigCommerce. Step-by-step setup, user guide, and support docs.",
+  alternates: { canonical: "/docs" },
 };
 
 const RESOURCES = [
