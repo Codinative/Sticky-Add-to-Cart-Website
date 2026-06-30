@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   verification: { google: "mE51E51lm1Lwm73kSnZ_DXll15Ab0zp2aWaCnir5q2s" },
   title: {
-    default: "Sticky Add to Cart - a persistent Add to Cart bar for BigCommerce",
+    default: "Sticky Add to Cart for BigCommerce - Boost Conversions",
     template: "%s - Sticky Add to Cart",
   },
   description:
-    "A BigCommerce app by Codinative that adds a fully customizable, always-visible Add to Cart bar to every product page. Style it visually, choose smart triggers, drag to arrange - no code required. Built to boost conversions.",
+    "Add a fully customizable, always-visible Add to Cart bar to every BigCommerce product page. Style it visually, set smart triggers, no code required.",
   keywords: [
     "BigCommerce sticky add to cart", "sticky cart bar", "add to cart bar", "conversion app",
     "product page conversion", "sticky bar", "Codinative", "BigCommerce app", "mobile add to cart",

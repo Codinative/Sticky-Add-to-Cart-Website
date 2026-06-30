@@ -5,6 +5,10 @@ import Icon from "@/components/Icon";
 import StickyPreview from "@/components/StickyPreview";
 import { APP_NAME, VENDOR, SITE_URL, LINKS } from "@/lib/site";
 
+export const metadata = {
+  alternates: { canonical: "/" },
+};
+
 const FEATURES = [
   { ic: "pin", t: "Always within reach", d: "A persistent Add to Cart bar follows shoppers down the page, so the buy action is never more than a glance away - no scrolling back to the top." },
   { ic: "palette", t: "Total visual control", d: "Colours, gradients, fonts, shadows, borders, opacity and button styles. Match your brand exactly with a live preview - no code, no theme edits." },
