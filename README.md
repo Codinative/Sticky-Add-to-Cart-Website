@@ -48,8 +48,17 @@ npm run lint
 
 ## Deploy
 
-Deploy to Vercel as a separate project and point `sticky-add-to-cart.codinative.com`
-at it. No environment variables are required.
+Static export (`output: "export"` → `out/`) served by **Firebase Hosting** on project
+`bc-sticky-notes-app` ([firebase.json](firebase.json)). Pushes to `main` deploy
+automatically via [.github/workflows/firebase-hosting-merge.yml](.github/workflows/firebase-hosting-merge.yml);
+pull requests get a preview channel. Manual deploy:
+
+```bash
+npm run build && firebase deploy --only hosting
+```
+
+Point `sticky-add-to-cart.codinative.com` at it under Hosting → Custom domains.
+No environment variables are required.
 
 ## Editing copy & links
 
