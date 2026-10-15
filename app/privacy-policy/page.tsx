@@ -20,7 +20,7 @@ export default function PrivacyPage() {
           <div className="doc-crumb"><Link href="/">Home</Link> <Icon name="chevR" size={13} /> Privacy Policy</div>
           <span className="eyebrow"><span className="dot" /> Legal</span>
           <h1 style={{ marginTop: 12 }}>Privacy Policy</h1>
-          <p className="lead">How {APP_NAME} handles data when installed on your BigCommerce store. Last updated 16 June 2026.</p>
+          <p className="lead">How {APP_NAME} handles data when installed on your BigCommerce store. Last updated 15 October 2026.</p>
         </div>
       </section>
 
@@ -36,11 +36,12 @@ export default function PrivacyPage() {
             <h2>Information we access</h2>
             <p>When a merchant installs the App via BigCommerce OAuth, we request only the permissions needed to run the sticky bar:</p>
             <ul>
-              <li><strong>Storefront scripts</strong> - to install the script that renders the bar on your product pages.</li>
-              <li><strong>Products</strong> - to read product details (title, price, image, variants) so the bar shows the right information.</li>
-              <li><strong>Store information</strong> - to read your store&apos;s currency and basic settings.</li>
+              <li><strong>Content (storefront scripts)</strong> - to install the script that renders the bar on your product pages.</li>
+              <li><strong>Products</strong> - to read product details (title, price, image, variants) so the bar shows the right information. The App does not change your catalogue.</li>
+              <li><strong>Carts</strong> - for the add-to-cart flow from the bar. The App does not store cart contents.</li>
+              <li><strong>Storefront API tokens</strong> - to look up the product a shopper is viewing through the BigCommerce Storefront API.</li>
             </ul>
-            <p>The App does <strong>not</strong> access orders, customers, or payment data.</p>
+            <p>The App does <strong>not</strong> access orders, customers, or your store&apos;s payment data.</p>
           </section>
 
           <section>
@@ -50,7 +51,7 @@ export default function PrivacyPage() {
               <li>Your <strong>store hash</strong> and the <strong>OAuth access token</strong> issued by BigCommerce at install.</li>
               <li>The <strong>store user(s)</strong> who installed or were granted access to the App (id, email, username).</li>
               <li>Your <strong>bar configuration</strong> - the styling, layout and behaviour settings you save in the dashboard.</li>
-              <li>Your <strong>subscription status</strong> for billing (see Third-party processors).</li>
+              <li>Your <strong>billing record</strong> - your Stripe customer ID, subscription status and dates, and whether your store has used its free trial (see Third-party processors).</li>
             </ul>
             <p>The App does not collect or store any shopper personal data. The bar runs in the shopper&apos;s browser and uses the product information already present on the page.</p>
           </section>
@@ -60,8 +61,8 @@ export default function PrivacyPage() {
             <ul>
               <li><strong>BigCommerce</strong> - the platform the App integrates with.</li>
               <li><strong>Google Firebase / Firestore</strong> - stores your store record and bar configuration.</li>
-              <li><strong>Vercel</strong> - hosts the App and serves the storefront script.</li>
-              <li><strong>Stripe</strong> - processes subscription billing.</li>
+              <li><strong>Google Firebase App Hosting</strong> - hosts the App and serves the storefront script.</li>
+              <li><strong>Stripe</strong> - processes subscription billing. Your card details are entered on Stripe&apos;s pages and handled by Stripe; we never see or store your full card number.</li>
             </ul>
             <p>We do not sell or share your data with advertisers, and we do not use it for any purpose other than operating the App.</p>
           </section>
@@ -70,7 +71,9 @@ export default function PrivacyPage() {
             <h2>Data retention &amp; deletion</h2>
             <p>
               When you uninstall the App, BigCommerce notifies our uninstall endpoint and we remove your store record,
-              access token and bar configuration, and the storefront script is removed. To request deletion at any other time,
+              access token and bar configuration, remove the storefront script, and cancel any active subscription. We keep a
+              minimal billing record (your Stripe customer ID, subscription status and whether the free trial was used) so your
+              billing history stays intact and the free trial is not granted twice. To request deletion at any other time,
               email us at <a href={LINKS.support}>{LINKS.email}</a>.
             </p>
           </section>

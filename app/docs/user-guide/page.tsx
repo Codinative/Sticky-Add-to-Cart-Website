@@ -2,7 +2,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
-import { LINKS } from "@/lib/site";
+import { LINKS, PRICE, TRIAL_DAYS } from "@/lib/site";
 
 export const metadata = {
   title: "User guide",
@@ -11,6 +11,7 @@ export const metadata = {
 
 const TOC = [
   { id: "dashboard", t: "The dashboard" },
+  { id: "plan", t: "Plan & visibility" },
   { id: "styling", t: "Styling tab" },
   { id: "layout", t: "Layout tab" },
   { id: "behavior", t: "Behavior tab" },
@@ -44,12 +45,25 @@ export default function UserGuide() {
           <article className="prose">
             <section id="dashboard">
               <h2>The dashboard</h2>
-              <p>The dashboard has two areas: a <strong>configuration panel</strong> on the left, organised into three tabs, and a <strong>live preview</strong> on the right that updates as you work. A floating save bar appears at the bottom whenever you have unsaved changes.</p>
+              <p>The dashboard has two areas: a <strong>configuration panel</strong> on the left, and a <strong>live preview</strong> on the right that updates as you work. At the top of the panel are your <strong>plan card</strong> and the <strong>Visibility</strong> card; below them, the settings are organised into three tabs. A floating save bar appears at the bottom whenever you have unsaved changes.</p>
               <ul>
                 <li><strong>Styling</strong> - the visual appearance of the bar and its elements.</li>
                 <li><strong>Layout</strong> - which elements show, their order, and where the bar sits.</li>
                 <li><strong>Behavior</strong> - when and how the bar appears, animates and reacts.</li>
               </ul>
+              <p>The header has a <strong>Leave us a review</strong> button and a <strong>Help</strong> menu showing the app version and our support email.</p>
+            </section>
+
+            <section id="plan">
+              <h2>Plan &amp; visibility</h2>
+              <p>The <strong>plan card</strong> shows your subscription status and the action you need next:</p>
+              <ul>
+                <li><strong>No active plan</strong> - click <strong>Start {TRIAL_DAYS}-day free trial</strong> (or <strong>Subscribe</strong> if your store has already used its trial). Stripe Checkout opens in a new tab; a card is required, and you&apos;re not charged until the trial ends. Promo codes can be entered at checkout.</li>
+                <li><strong>Free trial / Active</strong> - shows the days left or your renewal date, then {PRICE}/month. <strong>Manage billing</strong> opens the Stripe portal to update your card, download invoices or cancel. After cancelling, the bar keeps running until the end of the current period.</li>
+                <li><strong>Payment failed</strong> - click <strong>Update card</strong>. The bar keeps running while the payment is retried.</li>
+              </ul>
+              <p>The bar is shown on your storefront only while your trial or plan is active. Your settings are kept either way.</p>
+              <p>The <strong>Visibility</strong> card has two switches: <strong>Show on desktop</strong> and <strong>Show on mobile</strong>. A screen counts as mobile at or below the Mobile Breakpoint (Behavior → Mobile). Turn both off and save to pause the bar without losing your settings.</p>
             </section>
 
             <section id="styling">
@@ -69,7 +83,7 @@ export default function UserGuide() {
               <ul>
                 <li><strong>Element arrangement</strong> - drag to reorder the product image, title, price, variant selector, quantity picker and Add to Cart button, and hide any of them.</li>
                 <li><strong>Position</strong> - anchor the bar to the bottom (default), top, left or right of the viewport.</li>
-                <li><strong>Width &amp; alignment</strong> - full-width or contained with a max width, content max width, horizontal distribution and vertical alignment.</li>
+                <li><strong>Width &amp; alignment</strong> - full-width or contained with a max width, content max width (with quick presets that match common theme container widths), horizontal distribution and vertical alignment.</li>
                 <li><strong>Spacing</strong> - gaps between elements, the gap between the left and right groups, and the bar&apos;s offset from the screen edge.</li>
               </ul>
             </section>
@@ -78,17 +92,17 @@ export default function UserGuide() {
               <h2>Behavior tab</h2>
               <p>Control when and how the bar behaves:</p>
               <ul>
-                <li><strong>Display</strong> - the master enable toggle, trigger mode (on scroll, always, or after a delay), scroll threshold, and an optional close button with your chosen close behaviour.</li>
+                <li><strong>Display</strong> - trigger mode (on scroll, always, or after a delay) and an optional close button with your chosen close behaviour. On scroll, the bar appears as soon as your theme&apos;s Add to Cart button leaves the screen; the <strong>Fallback Scroll Threshold</strong> is used only if that button can&apos;t be found.</li>
                 <li><strong>Animation</strong> - entry (slide, fade, bounce or instant), exit (slide, fade or instant) and the animation duration.</li>
-                <li><strong>Cart behaviour</strong> - show a success notification with custom text, and optionally auto-hide the bar after an item is added.</li>
-                <li><strong>Mobile</strong> - show or hide on mobile, a compact mobile layout, and a configurable mobile breakpoint.</li>
+                <li><strong>Cart behaviour</strong> - <strong>Redirect on success</strong> (stay on the page, go to the cart, or go to checkout) and an optional success notification with custom text.</li>
+                <li><strong>Mobile</strong> - a compact mobile layout and a configurable mobile breakpoint. Showing or hiding the bar on mobile is set in the Visibility card.</li>
                 <li><strong>Advanced</strong> - z-index control (to sit above chat widgets or cookie banners) and a custom CSS class for theme-level overrides.</li>
               </ul>
             </section>
 
             <section id="preview">
               <h2>Live preview</h2>
-              <p>The preview panel shows a simulated product page with your bar applied in real time. Switch between <strong>desktop and mobile</strong> views, watch the active/inactive status, and use <strong>Full Preview</strong> to open an expanded view in a new tab before saving.</p>
+              <p>The preview panel shows a simulated product page with your bar applied in real time. It runs the same script your storefront uses, so what you see is what shoppers get. Switch between <strong>desktop and mobile</strong> views, watch the <strong>Active / Inactive</strong> badge (Active while Show on desktop or Show on mobile is on), and use <strong>Full Preview</strong> to open an expanded view in a new tab before saving.</p>
               <div className="note">The preview uses a sample product with placeholder data. On your storefront the real product name, price, image and variants come from BigCommerce automatically.</div>
             </section>
 

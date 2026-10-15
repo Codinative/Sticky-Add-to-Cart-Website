@@ -2,7 +2,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
-import { APP_NAME, VENDOR, LINKS } from "@/lib/site";
+import { APP_NAME, VENDOR, LINKS, PRICE, TRIAL_DAYS } from "@/lib/site";
 
 export const metadata = {
   title: "Terms of Service",
@@ -18,7 +18,7 @@ export default function TermsPage() {
           <div className="doc-crumb"><Link href="/">Home</Link> <Icon name="chevR" size={13} /> Terms of Service</div>
           <span className="eyebrow"><span className="dot" /> Legal</span>
           <h1 style={{ marginTop: 12 }}>Terms of Service</h1>
-          <p className="lead">The terms for using {APP_NAME}. Last updated 16 June 2026.</p>
+          <p className="lead">The terms for using {APP_NAME}. Last updated 15 October 2026.</p>
         </div>
       </section>
 
@@ -34,7 +34,7 @@ export default function TermsPage() {
             <p>
               The App adds a persistent, customizable Add to Cart bar to a merchant&apos;s BigCommerce product pages. The bar is
               installed on the storefront via a script and is configured from the App dashboard, with control over its styling,
-              layout and behaviour.
+              layout and behaviour. The bar is shown on your storefront only while your free trial or subscription is active.
             </p>
           </section>
 
@@ -51,9 +51,15 @@ export default function TermsPage() {
           <section>
             <h2>3. Billing &amp; trial</h2>
             <p>
-              The App is offered on a subscription basis with a free trial period. After the trial, recurring fees apply as shown
-              at sign-up and on the BigCommerce listing. Fees are billed through our payment processor. You can cancel at any time
-              by uninstalling the App; fees already charged are non-refundable except where required by law.
+              The App is offered on a subscription of {PRICE} per month (USD), billed through Stripe. Each store is eligible for one
+              {" "}{TRIAL_DAYS}-day free trial. A payment card is required to start the trial; you are not charged until the trial
+              ends, after which the subscription renews monthly until cancelled. Promotional codes may be applied at checkout.
+            </p>
+            <p>
+              You can cancel at any time from <strong>Manage billing</strong> in the App; the bar stays live until the end of the
+              current billing period. Uninstalling the App cancels the subscription immediately. If a payment fails, the bar keeps
+              running while the payment is retried; if it is not resolved, the bar is hidden until payment is completed. Fees
+              already charged are non-refundable except where required by law.
             </p>
           </section>
 
@@ -86,7 +92,8 @@ export default function TermsPage() {
             <h2>7. Termination</h2>
             <p>
               You may stop using the App at any time by uninstalling it from your BigCommerce control panel, which removes the
-              storefront script and deletes your stored data (see the <Link href="/privacy-policy">Privacy Policy</Link>).
+              storefront script, cancels your subscription and deletes your stored data, apart from a minimal billing record
+              (see the <Link href="/privacy-policy">Privacy Policy</Link>).
             </p>
           </section>
 

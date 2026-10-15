@@ -3,7 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
 import StickyPreview from "@/components/StickyPreview";
-import { APP_NAME, VENDOR, SITE_URL, LINKS } from "@/lib/site";
+import { APP_NAME, VENDOR, SITE_URL, LINKS, PRICE, TRIAL_DAYS } from "@/lib/site";
 
 export const metadata = {
   alternates: { canonical: "/" },
@@ -14,12 +14,12 @@ const FEATURES = [
   { ic: "palette", t: "Total visual control", d: "Colours, gradients, fonts, shadows, borders, opacity and button styles. Match your brand exactly with a live preview - no code, no theme edits." },
   { ic: "eye", t: "Smart show triggers", d: "Show the bar on scroll (when the original button leaves the screen), always on load, or after a timed delay. Add a dismiss button with your own close behaviour." },
   { ic: "move", t: "Drag-to-arrange layout", d: "Reorder image, title, price, variants, quantity and the button by dragging. Toggle any element off, and anchor the bar to the bottom, top, left or right." },
-  { ic: "phone", t: "Built for mobile", d: "A compact mobile layout with its own breakpoint, plus the option to show or hide the bar on phones. Smooth slide, fade or bounce animations on every device." },
-  { ic: "sliders", t: "Variants & quantity, inline", d: "Let shoppers pick a size or colour and set quantity right from the bar - dropdowns, swatches, radios or rectangles, with a stepper, dropdown or number input." },
+  { ic: "phone", t: "Built for mobile", d: "A compact mobile layout with its own breakpoint, plus separate Show on desktop and Show on mobile switches. Smooth slide, fade or bounce animations on every device." },
+  { ic: "sliders", t: "Variants & quantity, inline", d: "Let shoppers pick a size or colour and set quantity right from the bar - dropdowns, swatches, radios or rectangles. Then keep them on the page or send them straight to the cart or checkout." },
 ];
 
 const FLOW = [
-  { t: "Install the app", d: "Add Sticky Add to Cart from the BigCommerce App Marketplace. Your free trial starts on install - no theme files to touch." },
+  { t: "Install the app", d: `Add Sticky Add to Cart from the BigCommerce App Marketplace - no theme files to touch. Then start your ${TRIAL_DAYS}-day free trial from the dashboard.` },
   { t: "Configure your bar", d: "Use the Styling, Layout and Behavior tabs to design the bar. Every change updates the live preview instantly, on desktop and mobile." },
   { t: "Preview it live", d: "Check the bar on a simulated product page, switch between desktop and mobile, or open a full-page preview before you publish." },
   { t: "Save & go live", d: "Hit Save. The app installs the bar across all your product pages automatically - live in minutes, no developer required." },
@@ -32,12 +32,13 @@ const USECASES = [
 ];
 
 const FAQS = [
-  { q: "How does the bar get onto my product pages?", a: "When you click Save, the app automatically installs its storefront script on your store via the BigCommerce Scripts API - there are no theme files to edit. The bar then appears on all product pages. To remove it, toggle it off in the app or uninstall." },
+  { q: "How does the bar get onto my product pages?", a: "When you click Save, the app automatically installs its storefront script on your store via the BigCommerce Scripts API - there are no theme files to edit. While your free trial or plan is active, the bar appears on all product pages. To pause it, switch off Show on desktop and Show on mobile in the app; to remove it, uninstall." },
   { q: "Will it match my store's design?", a: "Yes. The Styling tab gives you full control over background (solid or gradient), typography, colours, button style, shadows, borders, the product image, variant controls and the quantity picker. Set the font to Store Default to inherit your theme's font automatically." },
   { q: "When exactly does the bar appear?", a: "You choose. Show it on scroll once the page's original Add to Cart button leaves the viewport (recommended), always on page load, or after a time delay. You can also set a scroll threshold and an optional close button." },
-  { q: "Does it work on mobile?", a: "Fully. There's a compact mobile layout, a configurable mobile breakpoint, and a toggle to show or hide the bar on phones entirely - plus smooth entry and exit animations." },
-  { q: "Can shoppers choose variants and quantity from the bar?", a: "Yes. Add the variant selector (dropdown, swatch, radio or rectangle list) and a quantity picker (stepper, dropdown or number input) to the bar, so customers can configure and add to cart without scrolling." },
-  { q: "What permissions does the app need?", a: "It needs access to storefront scripts (to install the bar) and to read product information so the bar shows the right title, price, image and variants. It does not touch your orders or payment data." },
+  { q: "Does it work on mobile?", a: "Fully. There's a compact mobile layout, a configurable mobile breakpoint, and separate Show on desktop and Show on mobile switches - plus smooth entry and exit animations." },
+  { q: "Can shoppers choose variants and quantity from the bar?", a: "Yes. Add the variant selector (dropdown, swatch, radio or rectangle list) and a quantity picker (stepper, dropdown or number input) to the bar, so customers can configure and add to cart without scrolling. After adding, you choose whether they stay on the page or go straight to the cart or checkout." },
+  { q: "How do pricing and the free trial work?", a: `It's ${PRICE}/month after a ${TRIAL_DAYS}-day free trial (one trial per store). Start the trial from the plan card in the app - Stripe Checkout asks for a card, and you're not charged until the trial ends. Cancel any time from Manage billing; the bar keeps running until the end of the period you've paid for. Uninstalling cancels straight away.` },
+  { q: "What permissions does the app need?", a: "Content (to install the storefront script that renders the bar), Products (to show the right title, price, image and variants - the app never changes your catalogue), Carts (for the add-to-cart flow) and Storefront API tokens (to look up the current product securely). It does not touch your orders or payment data." },
 ];
 
 export default function Home() {
@@ -82,7 +83,7 @@ export default function Home() {
               <span className="trust-sep" />
               <span className="trust-item"><Icon name="check" /> Live preview</span>
               <span className="trust-sep" />
-              <span className="trust-item"><Icon name="check" /> 7-day free trial</span>
+              <span className="trust-item"><Icon name="check" /> {TRIAL_DAYS}-day free trial</span>
             </div>
           </div>
           <StickyPreview />
@@ -143,7 +144,7 @@ export default function Home() {
             <ul className="checks">
               <li><span className="ck"><Icon name="check" /></span><div><b>Style every detail.</b><br /><span>Gradients, fonts, shadows, button styles, image, variants and quantity.</span></div></li>
               <li><span className="ck"><Icon name="check" /></span><div><b>Arrange the layout.</b><br /><span>Drag to reorder, hide elements, and anchor the bar to any edge.</span></div></li>
-              <li><span className="ck"><Icon name="check" /></span><div><b>Control the behaviour.</b><br /><span>Triggers, animations, success messages, mobile rules and z-index.</span></div></li>
+              <li><span className="ck"><Icon name="check" /></span><div><b>Control the behaviour.</b><br /><span>Triggers, animations, cart redirects, success messages, mobile rules and z-index.</span></div></li>
             </ul>
           </div>
           <div className="split-list">
@@ -157,7 +158,7 @@ export default function Home() {
             </div>
             <div className="pcard">
               <h4><span className="tag">Behavior</span> When &amp; how it shows</h4>
-              <p>Scroll, always-on or delayed triggers, entry and exit animations, add-to-cart success notifications, and dedicated mobile settings.</p>
+              <p>Scroll, always-on or delayed triggers, entry and exit animations, success notifications, redirect to cart or checkout after adding, and dedicated mobile settings.</p>
             </div>
           </div>
         </div>
@@ -194,11 +195,11 @@ export default function Home() {
           <div className="plan-wrap">
             <div className="plan">
               <div className="plan-head">
-                <span className="plan-name">Pro <span className="chip">7-day free trial</span></span>
+                <span className="plan-name">Pro <span className="chip">{TRIAL_DAYS}-day free trial</span></span>
                 <div className="plan-price">
-                  <b>$50</b><span>/ month</span>
+                  <b>{PRICE}</b><span>/ month</span>
                 </div>
-                <p className="plan-sub">Try every feature free for 7 days - cancel any time by uninstalling. No setup fees, no per-page charges.</p>
+                <p className="plan-sub">Try every feature free for {TRIAL_DAYS} days - a card is required to start, and you&apos;re not charged until the trial ends. Cancel any time from Manage billing in the app. No setup fees, no per-page charges.</p>
               </div>
               <div className="plan-body">
                 <ul className="checks">
@@ -210,7 +211,7 @@ export default function Home() {
                   <a href={LINKS.marketplace} target="_blank" rel="noopener" className="btn btn-primary btn-lg" style={{ width: "100%" }}>
                     <Icon name="store" size={18} /> Start free on BigCommerce
                   </a>
-                  <span className="plan-note">Billed in USD. See the BigCommerce listing for current pricing.</span>
+                  <span className="plan-note">Billed monthly in USD through Stripe. Promo codes can be applied at checkout.</span>
                 </div>
               </div>
             </div>
@@ -267,7 +268,7 @@ export default function Home() {
           <div className="cta">
             <div className="cta-in">
               <h2>Ready to keep Add to Cart in reach?</h2>
-              <p>Install Sticky Add to Cart, design your bar, and start turning more scrolls into checkouts - live in minutes, free for 7 days.</p>
+              <p>Install Sticky Add to Cart, design your bar, and start turning more scrolls into checkouts - live in minutes, free for {TRIAL_DAYS} days.</p>
               <div className="cta-btns">
                 <a href={LINKS.marketplace} target="_blank" rel="noopener" className="btn btn-primary btn-lg">
                   <Icon name="store" size={18} /> Get it on BigCommerce

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
-import { LINKS } from "@/lib/site";
+import { LINKS, PRICE, TRIAL_DAYS } from "@/lib/site";
 
 export const metadata = {
   title: "Installation guide",
@@ -21,11 +21,13 @@ const REQUIREMENTS = [
   { t: "A BigCommerce store", d: "Any plan. Install from the App Marketplace or your control panel under Apps → My Apps." },
   { t: "Product pages with an Add to Cart button", d: "The bar mirrors your product page's title, price, image, variants and quantity, so a standard product template is all you need." },
   { t: "A few minutes", d: "There are no theme files to edit. You configure the bar in the dashboard and the app installs it on your storefront for you." },
+  { t: "A payment card", d: `The ${TRIAL_DAYS}-day free trial starts through Stripe Checkout, which asks for a card. You're not charged until the trial ends, then it's ${PRICE}/month.` },
 ];
 
 const STEPS = [
-  { t: "Install the app", d: "Add Sticky Add to Cart from the BigCommerce App Marketplace, or from Apps → My Apps. Your free trial starts on install." },
+  { t: "Install the app", d: "Add Sticky Add to Cart from the BigCommerce App Marketplace, or from Apps → My Apps." },
   { t: "Grant the requested permissions", d: "BigCommerce shows the permissions the app needs and asks you to confirm. Approve them to finish - you're returned to the app dashboard." },
+  { t: "Start your free trial", d: `In the plan card at the top of the dashboard, click Start ${TRIAL_DAYS}-day free trial. Stripe Checkout opens in a new tab - add your card, then close the tab and return to the app. The bar only shows on your storefront while your trial or plan is active.` },
   { t: "Configure your bar", d: "Use the Styling, Layout and Behavior tabs to design the bar. Every change is reflected instantly in the live preview on the right." },
   { t: "Preview on desktop & mobile", d: "Toggle the preview between desktop and mobile, or open a full-page preview in a new tab, to check the bar at real resolution before publishing." },
   { t: "Save & publish", d: "Click Save Changes. The app installs the bar across all your product pages automatically - no theme edits, no developer required." },
@@ -78,16 +80,17 @@ export default function InstallationGuide() {
               <h2>Permissions</h2>
               <p>On install the app requests only the scopes it needs to run the sticky bar - nothing about your orders or payments:</p>
               <ul>
-                <li><strong>Content / Checkout scripts - modify</strong> - to install the storefront script that renders the bar on your product pages.</li>
-                <li><strong>Products - read</strong> - to display the correct title, price, image and variant options in the bar.</li>
-                <li><strong>Store information - read</strong> - to load your store&apos;s currency and basic settings.</li>
+                <li><strong>Content - modify</strong> - to install the storefront script that renders the bar on your product pages.</li>
+                <li><strong>Products - modify</strong> - to display the correct title, price, image and variant options in the bar. The app only reads product data; it never changes your catalogue.</li>
+                <li><strong>Carts - modify</strong> - for the add-to-cart flow from the bar.</li>
+                <li><strong>Storefront API tokens - generate</strong> - to look up the product a shopper is viewing through the BigCommerce Storefront API.</li>
               </ul>
               <div className="note">The app never reads or writes orders or payment data.</div>
             </section>
 
             <section id="steps">
               <h2>Installation steps</h2>
-              <p>Six steps from install to a live bar.</p>
+              <p>Seven steps from install to a live bar.</p>
               <div className="dsteps" style={{ marginTop: 18 }}>
                 {STEPS.map((s, i) => (
                   <div key={s.t} className="dstep">
@@ -108,14 +111,15 @@ export default function InstallationGuide() {
               <ul>
                 <li>When you click <strong>Save Changes</strong>, the app installs (or updates) its script on your store automatically through the BigCommerce Scripts API.</li>
                 <li>The bar then renders on all product pages, pulling each product&apos;s live title, price, image and variants.</li>
-                <li>To pause the bar without losing your settings, toggle <strong>Enable Sticky Bar</strong> off in the Behavior tab and save. To remove it entirely, uninstall the app.</li>
+                <li>The bar is shown only while your free trial or subscription is active. If the plan lapses, the bar is hidden until you subscribe again - your settings are kept.</li>
+                <li>To pause the bar without losing your settings, switch off both <strong>Show on desktop</strong> and <strong>Show on mobile</strong> in the <strong>Visibility</strong> card and save. To remove it entirely, uninstall the app - this also cancels your subscription.</li>
               </ul>
             </section>
 
             <section id="troubleshooting">
               <h2>Troubleshooting</h2>
               <h3>The bar isn&apos;t appearing</h3>
-              <p>Check that <strong>Enable Sticky Bar</strong> is on and your settings are saved. If the trigger is set to <strong>Show on scroll</strong>, scroll past the page&apos;s original Add to Cart button to reveal it.</p>
+              <p>Check that the plan card shows an active trial or plan, that <strong>Show on desktop</strong> / <strong>Show on mobile</strong> are on in the Visibility card, and that your settings are saved. If the trigger is set to <strong>Show on scroll</strong>, scroll past the page&apos;s original Add to Cart button to reveal it.</p>
               <h3>The bar is hidden behind another element</h3>
               <p>A chat widget or cookie banner may have a higher stacking order. Increase the <strong>Z-Index</strong> value in Behavior → Advanced (the default is 9999).</p>
               <h3>Variant options look wrong</h3>

@@ -17,7 +17,7 @@ a static, fast marketing SPA intended for `sticky-add-to-cart.codinative.com`.
 | Documentation home | https://sticky-add-to-cart.codinative.com/docs |
 | Installation guide | https://sticky-add-to-cart.codinative.com/docs/installation |
 | User guide | https://sticky-add-to-cart.codinative.com/docs/user-guide |
-| The app (embedded) | https://sticky.codinative.com/ |
+| The app (embedded) | https://stickyaddtocart--bc-sticky-notes-app.us-central1.hosted.app/ |
 | Codinative | https://codinative.com/ |
 
 ## Structure
@@ -53,10 +53,9 @@ at it. No environment variables are required.
 
 ## Editing copy & links
 
-Update product links (marketplace listing, app URL, support email) in
-[`lib/site.ts`](lib/site.ts). The marketplace URL and the embedded app URL
-(`sticky.codinative.com`) are placeholders until the app is published and its
-production domain is final.
+Update product links (marketplace listing, app URL, support email) and the plan
+(`PRICE`, `TRIAL_DAYS`) in [`lib/site.ts`](lib/site.ts). Keep the plan in sync with the
+app's Stripe price. The marketplace URL is a placeholder until the app is published.
 
 ---
 
