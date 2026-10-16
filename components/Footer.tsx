@@ -2,7 +2,7 @@ import Link from "next/link";
 import BrandMark from "@/components/BrandMark";
 import Icon from "@/components/Icon";
 import PartnerBadge from "@/components/PartnerBadge";
-import { APP_NAME, VENDOR, LINKS } from "@/lib/site";
+import { APP_NAME, VENDOR, LINKS, SITE_URL } from "@/lib/site";
 
 const COLS = [
   {
@@ -46,7 +46,7 @@ const APPS = [
     key: "signup",
     name: "Custom Signup Forms",
     sub: "B2B registration & approval",
-    url: "https://custom-signup-forms.codinative.com/",
+    url: "https://customsignupforms.codinative.com/",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <path d="M5 3h10l4 4v14H5z" /><path d="M15 3v4h4M8 11h8M8 15h4" /><path d="m13.5 18 2 2 4-4" />
@@ -68,7 +68,7 @@ const APPS = [
     key: "sticky",
     name: "Sticky Add to Cart",
     sub: "Storefront conversion boost",
-    url: "https://sticky-add-to-cart.codinative.com/",
+    url: `${SITE_URL}/`,
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
         <circle cx="9" cy="20" r="1.4" /><circle cx="17" cy="20" r="1.4" /><path d="M3 4h2l2.3 11.3a1 1 0 0 0 1 .8h8.4a1 1 0 0 0 1-.8L20 7H6" />

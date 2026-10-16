@@ -2,11 +2,15 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
-import { LINKS, PRICE, TRIAL_DAYS } from "@/lib/site";
+import { LINKS, PRICE, TRIAL_DAYS, pageMeta } from "@/lib/site";
 
 export const metadata = {
   title: "User guide",
-  description: "How to style, arrange and control your sticky Add to Cart bar - the Styling, Layout and Behavior tabs, the live preview, and saving your bar live.",
+  ...pageMeta(
+    "/docs/user-guide",
+    "User guide - Sticky Add to Cart",
+    "How to style, arrange and control your sticky Add to Cart bar - the Styling, Layout and Behavior tabs, the live preview, and saving your bar live.",
+  ),
 };
 
 const TOC = [

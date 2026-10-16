@@ -3,10 +3,17 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
 import StickyPreview from "@/components/StickyPreview";
-import { APP_NAME, VENDOR, SITE_URL, LINKS, PRICE, TRIAL_DAYS } from "@/lib/site";
+import { APP_NAME, VENDOR, SITE_URL, LINKS, PRICE, TRIAL_DAYS, OPEN_GRAPH } from "@/lib/site";
 
 export const metadata = {
   alternates: { canonical: "/" },
+  openGraph: {
+    ...OPEN_GRAPH,
+    url: "/",
+    title: "Sticky Add to Cart - a persistent Add to Cart bar for BigCommerce",
+    description:
+      "Keep the Add to Cart button in reach as shoppers scroll. Fully customizable, mobile-ready, smart triggers - no code required.",
+  },
 };
 
 const FEATURES = [

@@ -2,13 +2,15 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
-import { LINKS } from "@/lib/site";
+import { LINKS, pageMeta } from "@/lib/site";
 
 export const metadata = {
   title: { absolute: "Sticky Add to Cart Docs - Setup Guide | BigCommerce" },
-  description:
+  ...pageMeta(
+    "/docs",
+    "Sticky Add to Cart Docs - Setup Guide | BigCommerce",
     "Learn how to install and configure the Sticky Add to Cart app for BigCommerce. Step-by-step setup, user guide, and support docs.",
-  alternates: { canonical: "/docs" },
+  ),
 };
 
 const RESOURCES = [

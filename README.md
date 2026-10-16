@@ -5,18 +5,18 @@ The marketing + documentation site for **Sticky Add to Cart**, a BigCommerce app
 to every product page - styled visually, with smart triggers, variants and quantity built in.
 
 Built with **Next.js 15** (App Router) + **React 19** + TypeScript. No database, no API -
-a static, fast marketing SPA intended for `sticky-add-to-cart.codinative.com`.
+a static, fast marketing SPA intended for `stickyaddtocart.codinative.com`.
 
 ## Live site & links
 
-🌐 **Live site:** https://sticky-add-to-cart.codinative.com/
+🌐 **Live site:** https://stickyaddtocart.codinative.com/
 
 | Page | Link |
 |------|------|
-| Home (marketing) | https://sticky-add-to-cart.codinative.com/ |
-| Documentation home | https://sticky-add-to-cart.codinative.com/docs |
-| Installation guide | https://sticky-add-to-cart.codinative.com/docs/installation |
-| User guide | https://sticky-add-to-cart.codinative.com/docs/user-guide |
+| Home (marketing) | https://stickyaddtocart.codinative.com/ |
+| Documentation home | https://stickyaddtocart.codinative.com/docs |
+| Installation guide | https://stickyaddtocart.codinative.com/docs/installation |
+| User guide | https://stickyaddtocart.codinative.com/docs/user-guide |
 | The app (embedded) | https://stickyaddtocart--bc-sticky-notes-app.us-central1.hosted.app/ |
 | Codinative | https://codinative.com/ |
 
@@ -57,7 +57,7 @@ pull requests get a preview channel. Manual deploy:
 npm run build && firebase deploy --only hosting
 ```
 
-Point `sticky-add-to-cart.codinative.com` at it under Hosting → Custom domains.
+Point `stickyaddtocart.codinative.com` at it under Hosting → Custom domains.
 No environment variables are required.
 
 ## Editing copy & links

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, OPEN_GRAPH } from "@/lib/site";
 
 const inter = Inter({ variable: "--font-sans", subsets: ["latin"], display: "swap" });
 
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     "product page conversion", "sticky bar", "Codinative", "BigCommerce app", "mobile add to cart",
   ],
   openGraph: {
-    type: "website",
+    ...OPEN_GRAPH,
     title: "Sticky Add to Cart - a persistent Add to Cart bar for BigCommerce",
     description:
       "Keep the Add to Cart button in reach as shoppers scroll. Fully customizable, mobile-ready, smart triggers - no code required.",
-    siteName: "Sticky Add to Cart",
   },
   twitter: { card: "summary_large_image" },
+  icons: { icon: { url: "/icon.svg", type: "image/svg+xml" }, apple: "/apple-touch-icon.png" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

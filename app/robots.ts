@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL as BASE_URL } from "@/lib/site";
 
 export const dynamic = "force-static";
-
-const BASE_URL = "https://sticky-add-to-cart.codinative.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {

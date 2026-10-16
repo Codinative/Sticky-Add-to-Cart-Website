@@ -2,11 +2,15 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
-import { APP_NAME, VENDOR, LINKS, PRICE, TRIAL_DAYS } from "@/lib/site";
+import { APP_NAME, VENDOR, LINKS, PRICE, TRIAL_DAYS, pageMeta } from "@/lib/site";
 
 export const metadata = {
   title: "Terms of Service",
-  description: "The terms for using Sticky Add to Cart, a BigCommerce app by Codinative.",
+  ...pageMeta(
+    "/terms-of-service",
+    "Terms of Service - Sticky Add to Cart",
+    "The terms for using Sticky Add to Cart, a BigCommerce app by Codinative.",
+  ),
 };
 
 export default function TermsPage() {

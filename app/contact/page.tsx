@@ -3,11 +3,15 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
 import PartnerBadge from "@/components/PartnerBadge";
-import { VENDOR, LINKS } from "@/lib/site";
+import { VENDOR, LINKS, pageMeta } from "@/lib/site";
 
 export const metadata = {
   title: "Contact",
-  description: "Get in touch with Codinative - support and questions about Sticky Add to Cart.",
+  ...pageMeta(
+    "/contact",
+    "Contact - Sticky Add to Cart",
+    "Get in touch with Codinative - support and questions about Sticky Add to Cart.",
+  ),
 };
 
 const host = LINKS.vendor.replace(/^https?:\/\//, "").replace(/\/$/, "");

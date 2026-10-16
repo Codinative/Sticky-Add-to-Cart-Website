@@ -2,11 +2,15 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
-import { APP_NAME, VENDOR, LINKS } from "@/lib/site";
+import { APP_NAME, VENDOR, LINKS, pageMeta } from "@/lib/site";
 
 export const metadata = {
   title: "Privacy Policy",
-  description: "How Sticky Add to Cart handles data when installed on your BigCommerce store.",
+  ...pageMeta(
+    "/privacy-policy",
+    "Privacy Policy - Sticky Add to Cart",
+    "How Sticky Add to Cart handles data when installed on your BigCommerce store.",
+  ),
 };
 
 const host = LINKS.vendor.replace(/^https?:\/\//, "").replace(/\/$/, "");

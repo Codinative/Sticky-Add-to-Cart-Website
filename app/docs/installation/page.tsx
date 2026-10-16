@@ -2,11 +2,15 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Icon from "@/components/Icon";
-import { LINKS, PRICE, TRIAL_DAYS } from "@/lib/site";
+import { LINKS, PRICE, TRIAL_DAYS, pageMeta } from "@/lib/site";
 
 export const metadata = {
   title: "Installation guide",
-  description: "Requirements, permissions and a step-by-step setup to install Sticky Add to Cart and publish a sticky Add to Cart bar on your BigCommerce product pages.",
+  ...pageMeta(
+    "/docs/installation",
+    "Installation guide - Sticky Add to Cart",
+    "Requirements, permissions and a step-by-step setup to install Sticky Add to Cart and publish a sticky Add to Cart bar on your BigCommerce product pages.",
+  ),
 };
 
 const TOC = [
